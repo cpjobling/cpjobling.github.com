@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Crispy Dev</title>
+  <link href="http://dev.cpjobling.org.uk/atom.xml" rel="self"/>
+  <link href="http://dev.cpjobling.org.uk/"/>
+  <updated>2011-08-16T20:15:18+01:00</updated>
+  <id>http://dev.cpjobling.org.uk/</id>
+  <author>
+    <name>Chris P. Jobling</name>
+    
+  </author>
+
+  
+  <entry>
+    <title>SelectorGadget and Nokgiri</title>
+    <link href="http://dev.cpjobling.org.uk/blog/2011/04/05/selectorgadget-and-nokgiri/"/>
+    <updated>2011-04-05T10:37:00+01:00</updated>
+    <id>http://dev.cpjobling.org.uk/blog/2011/04/05/selectorgadget-and-nokgiri</id>
+    <content type="html">&lt;p&gt;Just watched &lt;a href=&quot;http://railscasts.com/episodes/190-screen-scraping-with-nokogiri&quot;&gt;Railscast Episode 190&lt;/a&gt; in which Ryan Bates demonstrated the use of the &lt;a href=&quot;http://nokogiri.org/&quot;&gt;Nokogiri Gem&lt;/a&gt; for a screen scraping application. As part of the episode, Ryan also demonstrated the use of &lt;a href=&quot;http://www.selectorgadget.com/&quot;&gt;SelectorGadget&lt;/a&gt;, a browser bookmarklet for exploring CSS styles on a page which is useful in Nokogiri for identifying CSS selectors to use to grab a particular HTML element (or group of elements). I had seen SelectorGadget recommended as a &lt;a href=&quot;http://www.technologybo.com/learn-jquery-with-firebug-jquerify-and-selectorgadget-3285.html&quot;&gt;learning tool for jQuery as well&lt;/a&gt;, and Ryan's screencast was a useful reminder.&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Incidently, Nokogiri is used by the &lt;a href=&quot;http://rspec.info/rails/&quot;&gt;Rspec&lt;/a&gt; and &lt;a href=&quot;http://rspec.info/rails/&quot;&gt;Cucumber&lt;/a&gt; testing tools for Rails view testing.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Getting back into development mode</title>
+    <link href="http://dev.cpjobling.org.uk/blog/2011/03/31/getting-back-into-development-mode/"/>
+    <updated>2011-03-31T00:00:00+01:00</updated>
+    <id>http://dev.cpjobling.org.uk/blog/2011/03/31/getting-back-into-development-mode</id>
+    <content type="html">&lt;p&gt;It's been a while (actually over a year) since I installed Octopress as a development log. I've gone back to it. After updating to the latest version and correcting some bugs that seem to have been introduced since I last used it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Crispy Development&lt;/em&gt; is all in place now and is updating correctly to its new home at &lt;a href=&quot;http://dev.cpjobling.org.uk&quot;&gt;dev.cpjobling.org.uk&lt;/a&gt; and also to my GitHub homepage at &lt;a href=&quot;http://cpjobling.github.com&quot;&gt;cpjobling.github.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For my reference, the deployment recipe is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ~/dev/dev.cpjobling.org.uk
+$ rake generate deploy
+$ rake deploy_github 
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Introducing BDD to Proman</title>
+    <link href="http://dev.cpjobling.org.uk/blog/2010/03/26/introducing-bdd-to-proman/"/>
+    <updated>2010-03-26T00:00:00+00:00</updated>
+    <id>http://dev.cpjobling.org.uk/blog/2010/03/26/introducing-bdd-to-proman</id>
+    <content type="html">&lt;p&gt;Behaviour Driven Development is well known in the Rails development community and I've decided to use it in my re-write of Proman. Following the instructions in Chapter 20 of the 13th beta of &lt;a href=&quot;The%20RSpec%20Book&quot;&gt;http://www.pragprog.com/titles/achbd/the-rspec-book&lt;/a&gt;, I installed the necessary gems (version numbers are the values at time of installation):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install rspec --version 1.3.0
+sudo gem install rspec-rails --version 1.3.2
+sudo gem install cucumber --version 0.6.3
+sudo gem install cucumber-rails --version 0.3.0
+sudo gem install database_cleaner --version 0.5.0
+sudo gem install webrat --version 0.7.0
+sudo gem install selenium-client --version 1.2.18
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I then installed &lt;em&gt;rspec&lt;/em&gt; and &lt;em&gt;cucumber&lt;/em&gt; in my new Proman 3 project:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ~/dev/Proman-3
+$ mkdir lib
+$ mkdir tasks
+$ ./script/generate rspec
+Configuring rspec and rspec-rails gems in config/environments/test.rb ...
+
+      exists  lib/tasks
+      create  lib/tasks/rspec.rake
+      create  script/autospec
+      create  script/spec
+      create  spec
+      create  spec/rcov.opts
+      create  spec/spec.opts
+      create  spec/spec_helper.rb
+
+$ ./script/generate cucumber --rspec --webrat
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/gem_dependency.rb:119:Warning: Gem::Dependency#version_requirements is deprecated and will be removed on or after August 2010.  Use #requirement
+       force  config/database.yml
+      create  config/cucumber.yml
+      create  config/environments/cucumber.rb
+      create  script/cucumber
+      create  features/step_definitions
+      create  features/step_definitions/web_steps.rb
+      create  features/support
+      create  features/support/paths.rb
+      create  features/support/env.rb
+      exists  lib/tasks
+      create  lib/tasks/cucumber.rake
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I committed the changes and created a tag &lt;em&gt;rspeced&lt;/em&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Running an Octopress Blog</title>
+    <link href="http://dev.cpjobling.org.uk/blog/2010/03/14/running-octopress-blog/"/>
+    <updated>2010-03-14T00:00:00+00:00</updated>
+    <id>http://dev.cpjobling.org.uk/blog/2010/03/14/running-octopress-blog</id>
+    <content type="html">&lt;p&gt;Inspired by &lt;a href=&quot;http://changelogshow.com/105/3197-episode-0-1-7-open-source-publishing-with-geoffrey-grosenbach-brandon-mathis-and-tim-caswell&quot;&gt;episode 0.1.7 of The Changelog podcast&lt;/a&gt;, I have cloned and configured an &lt;a href=&quot;http://github.com/imathis/octopress&quot;&gt;Octopress blog&lt;/a&gt; for recording my software development efforts. You will find a copy of this blog at &lt;a href=&quot;http://dev.cpjobling.org.uk&quot;&gt;dev.cpjobling.org.uk&lt;/a&gt; and also on my GitHub page &lt;a href=&quot;http://cpjobling.github.org&quot;&gt;cpjobling.github.org&lt;/a&gt;. And if it proves useful, Octopress may also replace the Proman development blog &lt;a href=&quot;http://promanman.blogspot.com/&quot;&gt;Proman, man&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Out of the box, it provides links to twitter and delicious and can be configured to use disqus, google custom search and google analytics.&lt;/p&gt;
+
+&lt;p&gt;As well as providing an interesting approach to blogging, Octopress, by using &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;, &lt;a href=&quot;http://compass-style.org/&quot;&gt;Compass&lt;/a&gt;, &lt;a href=&quot;http://haml-lang.com/&quot;&gt;Haml&lt;/a&gt; and &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt;, also provides me with a useful sandpit for trying out these technologies.&lt;/p&gt;
+</content>
+  </entry>
+  
+</feed>

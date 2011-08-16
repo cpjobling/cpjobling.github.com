@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://dev.cpjobling.org.uk/blog/2010/03/14/running-octopress-blog/</loc>
+        <lastmod>2011-08-16T20:05:34+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dev.cpjobling.org.uk/blog/2010/03/26/introducing-bdd-to-proman/</loc>
+        <lastmod>2011-08-16T20:07:53+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dev.cpjobling.org.uk/blog/2011/03/31/getting-back-into-development-mode/</loc>
+        <lastmod>2011-08-16T20:07:54+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dev.cpjobling.org.uk/blog/2011/04/05/selectorgadget-and-nokgiri/</loc>
+        <lastmod>2011-08-16T20:07:56+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dev.cpjobling.org.uk/blog/archives/</loc>
+        <lastmod>2011-08-16T20:07:56+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dev.cpjobling.org.uk/</loc>
+        <lastmod>2011-08-16T20:07:56+01:00</lastmod>
+    </url>
+</urlset>
